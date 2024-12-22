@@ -1,0 +1,23 @@
+Node introspection by numa
+    openstack baremetall introspection data save <uid> | jq .numa_topology
+
+Node introspection by interface
+    openstack baremetall introspection data save <host> |  jq .extra |  jq .network
+
+Cache clearing 
+    echo 3 > /proc/sys/vm/drop_caches
+
+Saving iptables rules
+    /sbin/iptables-save
+
+DPDK version check
+     ovs-vswitchd --version
+
+SCP template
+    scp user@src:/ user@dst:/
+
+Enabling TMUX scrolling
+    echo "set-option -g mouse on" >> ~/.tmux.conf
+
+Upload images for overcloud
+    openstack overcloud image upload --image-path /path/to/images
